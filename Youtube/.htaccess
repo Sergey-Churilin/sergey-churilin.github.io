@@ -1,0 +1,22 @@
+# кеширование в браузере на стороне пользователя
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access 7 days"
+ExpiresByType application/javascript "access plus 7 days"
+ExpiresByType text/javascript "access plus 7 days"
+ExpiresByType text/css "access plus 7 days"
+ExpiresByType text/html "access plus 7 days"
+ExpiresByType text/x-javascript "access 7 days"
+ExpiresByType image/gif "access plus 7 days"
+ExpiresByType image/jpeg "access plus 7 days"
+ExpiresByType image/png "access plus 7 days"
+ExpiresByType image/jpg "access plus 7 days"
+ExpiresByType image/x-icon "access 7 days"
+ExpiresByType application/x-shockwave-flash "access 7 days"
+</IfModule>
+ 
+#Запрет отдачи HTTP-заголовков Vary браузерам семейства MSIE
+<IfModule mod_setenvif.c>
+BrowserMatch "MSIE" force-no-vary
+BrowserMatch "Mozilla/4.[0-9]{2}" force-no-vary
+</IfModule>
