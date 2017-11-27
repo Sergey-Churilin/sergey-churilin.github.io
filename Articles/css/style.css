@@ -7,6 +7,17 @@
 body{
     background: #f5fcfe;
 }
+html,
+body,
+.wrapper {
+	height: 100%;
+}
+
+main{
+	box-sizing: border-box;
+	min-height: 100%;
+	padding-bottom: 30px;
+}
 
 .selectBar{
     display: flex;
@@ -113,6 +124,16 @@ body{
     color: #223063;
 }
 
+footer{
+	text-align:center;
+	height: 20px;
+	margin-top: -20px;
+}
+
+footer a{
+	color: #3139be;
+}
+
 @media screen and (min-width:1000px)
 and (max-width: 1300px){
     .select, .search, .buttonGetArticle{
@@ -126,11 +147,6 @@ and (max-width: 1300px){
     .search{
         width: 200px;
     }
-
-   /* .article{
-        width: 48%;
-        padding-right: 2%;
-    }*/
 }
 @media screen and (min-width:1000px)
 and (max-width: 1100px){
@@ -161,10 +177,6 @@ and (max-width: 1100px){
         border-bottom: 1px solid #a8dbff;
         overflow: hidden;
     }
-    /*.article{
-        width: 48%;
-        padding-right: 2%;
-    }*/
     .sectionLeft,.sectionRight{
         float: none;
     }
