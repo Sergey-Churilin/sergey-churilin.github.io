@@ -7,8 +7,11 @@ class Application{
     }
 
     createLayout() {
+        this._createWrapper();
+        this._createMain();
         this._createSelectBar();
         this._createMainSection();
+        this._createFooter();
         this._createSources();
         this._createEndpoints();
         this._createLanguages();
@@ -18,21 +21,62 @@ class Application{
     }
 
     /**
+     * Create wrapper
+     */
+    _createWrapper(){
+        this.wrapper =  document.createElement("div");
+        this.wrapper.classList.add("wrapper");
+        this.body.appendChild(this.wrapper);
+    }
+
+	/**
+     * Create main section
+     */
+    _createMain(){
+        this.main = document.createElement("main");
+        this.wrapper.appendChild(this.main);
+    }
+	
+    /**
      * Create select bar
      */
     _createSelectBar(){
         this.selectBar = document.createElement("header");
         this.selectBar.classList.add("selectBar");
-        this.body.appendChild(this.selectBar);
+        this.main.appendChild(this.selectBar);
     }
 
+	
     /**
      * Create main section
      */
     _createMainSection(){
         this.mainSection = document.createElement("section");
         this.mainSection.classList.add("mainSection");
-        this.body.appendChild(this.mainSection);
+        this.main.appendChild(this.mainSection);
+    }
+
+     /**
+     * Create footer
+     */
+    _createFooter(){
+        const footer =  document.createElement("footer");
+        footer.classList.add("footer");
+        this.wrapper.appendChild(footer);
+		
+		const pAttribution =  document.createElement("p");
+		const pAttributionText = document.createTextNode("Created using ");
+		
+		const aAttribution = document.createElement("a");
+		aAttribution.setAttribute("href", "https://newsapi.org/");
+        aAttribution.setAttribute("target", '_blank');
+		
+		const aAttributionText = document.createTextNode("https://newsapi.org/");
+		
+		aAttribution.appendChild(aAttributionText);
+		pAttribution.appendChild(pAttributionText);
+		pAttribution.appendChild(aAttribution);
+		footer.appendChild(pAttribution);
     }
 
     /**
