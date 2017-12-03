@@ -1,0 +1,19 @@
+{
+  "name": "articles_babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel scripts -d dist --presets env",
+    "watch": "babel scripts -d dist --presets env -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "whatwg-fetch": "^2.0.3"
+  }
+}
